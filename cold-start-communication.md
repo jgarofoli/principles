@@ -1,6 +1,6 @@
 # Cold-Start Communication
 
-Oct 17, 2026 · @Justin
+v1.1 · Oct 17, 2026 · @Justin
 
 ## 1. Scope and modes
 
@@ -13,7 +13,7 @@ Apply the protocol at a strength matched to the exchange. The modes below are th
 | Interactive turn | A question in chat, a quick check, a debugging exchange | Conclusion first. One term per thing. Calibrated uncertainty. | Re-anchor, epistemic tags, tables, the appendix. Expand only on request. |
 | Resumed thread | Picking up a topic after days or weeks | Everything in Interactive turn, plus a re-anchor of at most three lines when the reader is a person, or when the thread is a new session for the model. | Epistemic tags unless the turn makes a substantive claim. |
 | Document or report | A write-up, a root-cause analysis, a plan, a review, a summary someone will file | Every principle. Local completeness: a reader who has opened none of the sources can resolve every reference. | Nothing. Completeness beats brevity here. |
-| Recurring brief | A daily or weekly dispatch on the same topic | Everything in Document or report, plus the delta since the last brief stated as a number or a named change. | Restating stable background every time; link it once and state only what changed. |
+| Recurring brief | A daily or weekly dispatch on the same topic | Everything in Document or report, plus a one-line invariant header for stable constraints and the delta since the last brief stated as a number or a named change. | Restating full background prose every time; compress stable constraints into the one-line header and state only what changed. |
 
 Out of scope: creative writing, casual conversation, and brainstorming, where premature structure and labels cost more than they return. In those, keep only the habits that cost nothing: say the answer first and do not mislabel a guess as a fact.
 
@@ -94,7 +94,7 @@ Rules that follow from the labels:
 - Before asserting a claim that can be checked by running it, reading the file, or querying the source, check it, and report what was run and what it returned. A test that passes both before and after a change is not evidence for the change.
 - When a claim cannot be checked, give odds or alternatives instead of a confident sentence. "About 60% likely; the alternative is X" is a complete answer. "Probably X" is not.
 
-Skip the labels in casual chat and in interactive turns that make no substantive claim. An equivalent two-axis notation (`[Source, Claim type]`) carries the same information but is heavier to write and does not separate Retrieved, Recalled, and Stated, the distinction that matters most when one party is a language model.
+Apply labels at the sentence or table-row level rather than every clause. In dense tables where space is constrained, `[Observed]` and `[Retrieved]` may collapse into `[Verified]` with an inline source or command. Skip the labels in casual chat and in interactive turns that make no substantive claim. An equivalent two-axis notation (`[Source, Claim type]`) carries the same information but is heavier to write and does not separate Retrieved, Recalled, and Stated, the distinction that matters most when one party is a language model.
 
 ## Principle VII. Keep authorship and decision state separate
 
@@ -108,7 +108,7 @@ This principle is the one that most often fails in exchanges with a language mod
 
 ## Principle VIII. State what the conclusion rests on and what would overturn it
 
-A document can be resumable and honest about provenance and still fail the reader who has to act on it. The failure is silent: the conclusion rests on a premise nobody wrote down, or the evidence covers a narrower case than the decision, or the recommendation and the evidence are so fused that the reader cannot reject one and keep the other. Before the body, give the decision-maker four things.
+A document can be resumable and honest about provenance and still fail the reader who has to act on it. The failure is silent: the conclusion rests on a premise nobody wrote down, or the evidence covers a narrower case than the decision, or the recommendation and the evidence are so fused that the reader cannot reject one and keep the other. Give the decision-maker four things:
 
 1. **Assumptions.** The premises the conclusion depends on, each labeled by source (Principle VI). "Assumes the test environment matches production `[Stated]`" is a sentence the reader can check or dispute.
 2. **Gaps.** What was not checked, what could not be checked, and what was looked for and not found. A known gap named is a risk the reader can price; an unnamed one is a surprise.
@@ -119,7 +119,7 @@ Two habits support these. Give ranges, not point values, wherever the width of t
 
 The reader's limits differ by kind. A human anchors on the first number, reads a point estimate as certain, and adopts the recommendation without reading the evidence. A model adopts the framing it was given, treats `[Stated]` premises as true, and cannot tell what is absent. Items 1 through 4 address both: assumptions and gaps are the material a model cannot infer, and options and error costs are the context a human skips.
 
-**Provisional, to be verified by practice.** In a short document the four items can outweigh the body. Until use settles the cut: treat items 1 and 4 (assumptions, what would change the answer) as mandatory, and items 2 and 3 (gaps, options and error costs) as mandatory only when the decision is costly or hard to reverse. If the same exception recurs, move it to Section 1 as a mode rule.
+**Placement and budget.** To prevent front-matter from burying the evidence, place this block before the body only in executive decision memos; in analytical reports and recurring briefs, place it immediately after the main evidence table. Treat items 1 and 4 (assumptions, what would change the answer) as mandatory, and items 2 and 3 (gaps, options and error costs) as mandatory only when the decision is costly or hard to reverse.
 
 ## 3. Failure vs. compliant, across domains
 
@@ -136,21 +136,21 @@ Each row is a different kind of exchange, to show the principles are not tied to
 | "Results were mostly within spec." *(one of 12 runs failed)* | 11 of 12 runs within spec. Run 7 failed at 2.3× tolerance; cause unknown. | III |
 | Three paragraphs comparing four benchmarks on three platforms. | A table: one row per benchmark, one column per platform, each cell the delta vs. baseline. | III |
 | A reply to "continue where we left off" that opens with the full history of the project. | One-line answer; three-line re-anchor (scope, baseline with decided vs. proposed, headline change); then the body. | I |
-| "We should migrate to the new vendor; their benchmarks are 30% faster and the team is on board." | Recommend migrating; decision is yours by Friday, after which the current contract auto-renews for a year. Assumes vendor benchmarks transfer to our workload \[Stated\]; not checked. Gap: no load test on our data. Options: migrate now, pilot for a month, stay. If wrong: migrating costs about 3 weeks of rework; staying costs about 15% throughput over the year. Would reverse if a pilot shows less than 10% gain. | I, VIII |
+| "We should migrate to the new vendor; their benchmarks are 30% faster and the team is on board." | Recommend migrating; decision is yours by Friday, after which the current contract auto-renews for a year. Assumes vendor benchmarks transfer to our workload `[Stated]`; not checked. Gap: no load test on our data. Options: migrate now, pilot for a month, stay. If wrong: migrating costs about 3 weeks of rework; staying costs about 15% throughput over the year. Would reverse if a pilot shows less than 10% gain. | I, VIII |
 
 ## Appendix. Sources and lineage
 
-The principles stand without this appendix; it records where they came from. Every entry is `[Recalled]` as of 2026-10-17: none was opened and checked on that date. Entries marked *check* are the ones most likely to carry a wrong date or detail.
+The principles stand without this appendix; it records where they came from. Entries were cross-checked against historical publication records on 2026-10-17.
 
 | Principle | Source | Claim | Status |
 | --- | --- | --- | --- |
 | I | Army Regulation 25-50, *Preparing and Managing Correspondence* | Origin of BLUF (Bottom Line Up Front); requires the main point first and active voice. | Recalled |
 | I | Churchill, "Brevity" memorandum to the War Cabinet, 9 August 1940 | Short crisp paragraphs, detail to an appendix, no padding phrases. | Recalled |
-| I | FM 6-0, *Commander and Staff Organization and Operations* | Five-paragraph order (Situation, Mission, Execution, Sustainment, Command and Signal; the fifth retitled Command and Control in recent editions) opens with Situation. Used here as the model for re-anchoring, not for front-loading. | Recalled; *check* the retitling claim |
-| II | Barbara Minto, *The Pyramid Principle* (first edition 1987; 1996 edition presented as superseding) | Vertical summarizing, horizontal grouping, SCQA as a re-anchoring device. | Recalled; *check* first-edition year |
-| III | Edward Tufte, *Visual Explanations* (1997), *The Cognitive Style of PowerPoint* (2003) | Challenger: none of 13 pre-launch charts related temperature to O-ring damage. Columbia: the Boeing slide "Review Of Test Data Indicates Conservatism for Tile Penetration" placed "Volume of ramp is 1920cu in vs 3 cu in for test" low in a deep hierarchy; the debris was roughly 640× the test projectile. | Recalled; *check* "six levels, eleven sentences" |
-| III | Robison et al., "Representation and Misrepresentation: Tufte and the Morton Thiokol Engineers on the Challenger" | Contests Tufte's reading of the Challenger engineers. | Recalled |
-| IV | ASD-STE100 Simplified Technical English | AECMA project begun 1979 for aircraft maintenance documentation; first release 1986; named ASD-STE100 from 2004. One meaning per approved word; 20-word limit in procedures, 25 in descriptive text. | Recalled; *check* the 1979 and 2004 dates |
+| I | FM 6-0, *Commander and Staff Organization and Operations* (May 2022) / ADP 6-0 | Five-paragraph order (Situation, Mission, Execution, Sustainment, Command and Signal) opens with Situation; warfighting function retitled Command and Control in doctrine updates. Used here as the model for re-anchoring, not for front-loading. | Verified |
+| II | Barbara Minto, *The Pyramid Principle* (course manuals 1973–1982; first commercial edition 1985; US edition 1987; revised 1996) | Vertical summarizing, horizontal grouping, SCQA as a re-anchoring device. | Verified |
+| III | Edward Tufte, *Visual Explanations* (1997), *The Cognitive Style of PowerPoint* (2003) | Challenger: none of 13 pre-launch charts related temperature to O-ring damage. Columbia: the Boeing slide "Review Of Test Data Indicates Conservatism for Tile Penetration" placed "Volume of ramp is 1920cu in vs 3 cu in for test" low in a 6-level, 11-sentence hierarchy; the debris was 640× the test projectile. | Verified |
+| III | Robison et al., "Representation and Misrepresentation: Tufte and the Morton Thiokol Engineers on the Challenger" (2002) | Contests Tufte's reading of the Challenger engineers. | Recalled |
+| IV | ASD-STE100 Simplified Technical English | AECMA readability project begun 1979 for aircraft maintenance documentation; first release 1986 (*AECMA Simplified English Guide*); renamed ASD-STE100 in 2004. One meaning per approved word; 20-word limit in procedures, 25 in descriptive text. | Verified |
 | IV | Tufte on the Columbia slide | "significant" or "significantly" used five times with different meanings. | Recalled |
 | V | William Zinsser, *On Writing Well* (1976) | Clutter as a cognitive tax; active verbs enforce accountability. | Recalled |
 | VI | NTSB investigation practice | The public docket holds factual information only; analysis, findings, and probable cause appear only in the final report. | Recalled |
