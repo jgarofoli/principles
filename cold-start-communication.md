@@ -144,8 +144,8 @@ The principles stand without this appendix; it records where they came from. Ent
 
 | Principle | Source | Claim | Status |
 | --- | --- | --- | --- |
-| I | Army Regulation 25-50, *Preparing and Managing Correspondence* | Origin of BLUF (Bottom Line Up Front); requires the main point first and active voice. | Recalled |
-| I | Churchill, "Brevity" memorandum to the War Cabinet, 9 August 1940 | Short crisp paragraphs, detail to an appendix, no padding phrases. | Recalled |
+| I | Army Regulation 25-50, *Preparing and Managing Correspondence* | Origin of BLUF (Bottom Line Up Front); requires the main point first and active voice. | [Verified](https://armypubs.army.mil/epubs/DR_pubs/DR_a/ARN42124-AR_25-50-007-WEB-13.pdf) |
+| I | Churchill, "Brevity" memorandum to the War Cabinet, 9 August 1940 | Short crisp paragraphs, detail to an appendix, no padding phrases. | [Verified](https://www.futilitycloset.com/2026/09/26/summary-advice/) |
 | I | FM 6-0, *Commander and Staff Organization and Operations* (May 2022) / ADP 6-0 | Five-paragraph order (Situation, Mission, Execution, Sustainment, Command and Signal) opens with Situation; warfighting function retitled Command and Control in doctrine updates. Used here as the model for re-anchoring, not for front-loading. | Verified |
 | II | Barbara Minto, *The Pyramid Principle* (course manuals 1973–1982; first commercial edition 1985; US edition 1987; revised 1996) | Vertical summarizing, horizontal grouping, SCQA as a re-anchoring device. | Verified |
 | III | Edward Tufte, *Visual Explanations* (1997), *The Cognitive Style of PowerPoint* (2003) | Challenger: none of 13 pre-launch charts related temperature to O-ring damage. Columbia: the Boeing slide "Review Of Test Data Indicates Conservatism for Tile Penetration" placed "Volume of ramp is 1920cu in vs 3 cu in for test" low in a 6-level, 11-sentence hierarchy; the debris was 640× the test projectile. | Verified |
