@@ -8,7 +8,7 @@ This companion to *Cold-Start Communication (v1.1)* governs how to read, audit, 
 
 Do not interrogate a flawed document sentence by sentence. Line-by-line editing of an unanchored draft pays the exact cognitive tax the protocol is designed to prevent. Use this guide to shed cognitive load: calibrate your threshold to the stakes and lifespan of the document, run a 30-second structural gate before reading the body, and translate protocol violations into diplomatic margin comments that force the author to supply the missing rigor.
 
-Unlike the protocol, this companion is not domain-neutral. Its examples assume an autonomous-vehicle simulation and evaluation context (closed-loop simulation, on-vehicle telemetry, planner and policy modules) because that is where its readers work. The mechanisms transfer; the examples do not. If you adapt this guide for another team, replace the examples in Section 4 and keep the structure.
+Unlike the protocol, this companion is not domain-neutral. Its examples assume an autonomous-vehicle simulation and evaluation context (closed-loop simulation, on-vehicle telemetry, planner and policy modules) to make it something concrete and consistent. The mechanisms transfer; the examples do not. If you adapt this guide for a different domain, replace the examples in Section 4 and keep the structure.
 
 ## 2. Mechanism I: Calibration
 
